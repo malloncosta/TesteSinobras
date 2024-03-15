@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { RestMethods } from '../../../providers/rest-methods';
 import { CommonModule } from '@angular/common';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { Router } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
 
@@ -16,38 +16,39 @@ import { NgxPaginationModule } from 'ngx-pagination';
 })
 export class CollaboratorsComponent {
   collaborators: any;
-  imageSrc: string = '';
-  
-  public currentPage = 1; 
+
+  public currentPage = 1;
   public itemsPerPage = 5;
+
+  imageSrcMap: Map<number, string> = new Map<number, string>(); 
 
   constructor(
     private rest: RestMethods,
     private router: Router,
   ) {
     this.getCollaborators();
-    //this.getTemporaryImage();
   }
 
   async getCollaborators() {
     const url = "http://localhost:5046/api/v1/employee"
     const [status, response] = await this.rest.getData(url);
-    if(status === 200){
+    if (status === 200) {
       this.collaborators = response;
+      this.preloadImages();
       console.log(this.collaborators)
     }
   }
 
-  async deleteCollaborator(id: number){
+  async deleteCollaborator(id: number) {
     const url = `http://localhost:5046/api/v1/employee/delete/${id}`
     const status = await this.rest.deleteData(url);
-    if(status === 200){
+    if (status === 200) {
       console.log("apagado com sucesso")
       this.getCollaborators();
     }
   }
 
-  goRegister(){
+  goRegister() {
     const queryParams = {
       update: false,
     };
@@ -57,29 +58,30 @@ export class CollaboratorsComponent {
     })
   }
 
-  async getTemporaryImage() {
-    const imageUrl = `http://localhost:5046/api/v1/employee/image/${21}`;
-
-    try {
-      const response = await fetch(imageUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-      });
-
-      if (response.ok) {
-        const blob = await response.blob(); 
-        this.imageSrc = URL.createObjectURL(blob);
-      } else {
-        console.error('Erro ao obter a imagem:', response.status);
+  async preloadImages() {
+    for (const collaborator of this.collaborators) {
+      const imageUrl = `http://localhost:5046/api/v1/employee/image/${collaborator.employeeId}`;
+      try {
+        const response = await fetch(imageUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+        });
+        if (response.ok) {
+          const blob = await response.blob();
+          const imageUrl = URL.createObjectURL(blob);
+          this.imageSrcMap.set(collaborator.employeeId, imageUrl);
+        } else {
+          console.error('Erro ao obter a imagem:', response.status);
+        }
+      } catch (error) {
+        console.error('Erro ao obter a imagem:', error);
       }
-    } catch (error) {
-      console.error('Erro ao obter a imagem:', error);
     }
   }
 
-  goUpdate(collaborator: any){
+  goUpdate(collaborator: any) {
     const queryParams = {
       update: true,
       idEmployee: collaborator.employeeId,

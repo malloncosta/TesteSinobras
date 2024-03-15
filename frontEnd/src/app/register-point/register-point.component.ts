@@ -18,6 +18,7 @@ export class RegisterPointComponent {
   attendances: any;
   collaborators: any;
   currentDate: Date = new Date();
+  imageSrcMap: Map<number, string> = new Map<number, string>(); 
 
   public currentPage = 1; 
   public itemsPerPage = 5;
@@ -40,6 +41,7 @@ export class RegisterPointComponent {
         .map((attendance: { attendance: any; }) => attendance.attendance);
       
       console.log(this.collaborators)
+      this.preloadImages();
     }
   }
 
@@ -68,6 +70,29 @@ export class RegisterPointComponent {
       this.getAttendances();
     } else {
       this.openSnackBar("Saída não registrada", "Erro");
+    }
+  }
+
+  async preloadImages() {
+    for (const collaborator of this.collaborators) {
+      const imageUrl = `http://localhost:5046/api/v1/employee/image/${collaborator.employeeId}`;
+      try {
+        const response = await fetch(imageUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+        });
+        if (response.ok) {
+          const blob = await response.blob();
+          const imageUrl = URL.createObjectURL(blob);
+          this.imageSrcMap.set(collaborator.employeeId, imageUrl);
+        } else {
+          console.error('Erro ao obter a imagem:', response.status);
+        }
+      } catch (error) {
+        console.error('Erro ao obter a imagem:', error);
+      }
     }
   }
 

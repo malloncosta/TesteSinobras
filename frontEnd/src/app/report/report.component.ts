@@ -53,6 +53,7 @@ export const MY_FORMATS = {
 export class ReportComponent {
   date = new FormControl(moment());
   collaborators: any;
+  imageSrcMap: Map<number, string> = new Map<number, string>(); 
 
   public currentPage = 1; 
   public itemsPerPage = 5;
@@ -82,6 +83,30 @@ export class ReportComponent {
     if(status === 200){
       this.collaborators = response;
       console.log(response)
+      this.preloadImages();
+    }
+  }
+
+  async preloadImages() {
+    for (const collaborator of this.collaborators) {
+      const imageUrl = `http://localhost:5046/api/v1/employee/image/${collaborator.employeeId}`;
+      try {
+        const response = await fetch(imageUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+        });
+        if (response.ok) {
+          const blob = await response.blob();
+          const imageUrl = URL.createObjectURL(blob);
+          this.imageSrcMap.set(collaborator.employeeId, imageUrl);
+        } else {
+          console.error('Erro ao obter a imagem:', response.status);
+        }
+      } catch (error) {
+        console.error('Erro ao obter a imagem:', error);
+      }
     }
   }
 
