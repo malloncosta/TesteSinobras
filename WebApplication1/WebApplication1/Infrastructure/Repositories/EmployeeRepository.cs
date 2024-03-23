@@ -1,4 +1,5 @@
-﻿using WebApplication1.Domain.DTOs;
+﻿using Microsoft.EntityFrameworkCore;
+using WebApplication1.Domain.DTOs;
 using WebApplication1.Domain.Model;
 
 namespace WebApplication1.Infrastructure.Repositories
@@ -32,6 +33,26 @@ namespace WebApplication1.Infrastructure.Repositories
         public Employee? Get(int id)
         {
             return _context.Employees.Find(id);
+        }
+
+        public void Update(Employee employee)
+        {
+            _context.Employees.Update(employee);
+            _context.SaveChanges();
+        }
+
+        public void Delete(int id)
+        {
+            var employeeToDelete = _context.Employees.Find(id);
+
+            var attendancesToDelete = _context.Attendances.Where(a => a.employeeId == id);
+            _context.Attendances.RemoveRange(attendancesToDelete);
+
+            if (employeeToDelete != null)
+            {
+                _context.Employees.Remove(employeeToDelete);
+                _context.SaveChanges();
+            }
         }
     }
 }

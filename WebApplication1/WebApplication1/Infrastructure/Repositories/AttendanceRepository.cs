@@ -46,5 +46,22 @@ namespace WebApplication1.Infrastructure.Repositories
             _context.SaveChanges();
         }
 
+        public List<AttendanceDTO> GetByMonth(int month)
+        {
+            return _context.Attendances
+                .Where(b => b.date.Month == month)
+                .Select(b =>
+                    new AttendanceDTO()
+                    {
+                        Id = b.id,
+                        EmployeeId = b.employeeId,
+                        Date = b.date,
+                        EntryTime = b.entryTime,
+                        ExitTime = b.exitTime
+                    }
+                ).ToList();
+        }
+
+
     }
 }

@@ -9,5 +9,10 @@ namespace WebApplication1.Domain.Model
         List<EmployeeDTO> Get(int pageNumber, int pageQuantity);
 
         Employee? Get(int id);
+
+        void Update(Employee employee);
+
+        public void Delete(int id);
+
     }
 }

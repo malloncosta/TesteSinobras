@@ -49,7 +49,7 @@ namespace WebApplication1.Controllers
 
         //[Authorize]
         [HttpPost]
-        [Route("{id}/employee")]
+        [Route("image/{id}")]
         public IActionResult DownloadPhoto(int id)
         {
             var employee = _employeeRepository.Get(id);
@@ -77,6 +77,54 @@ namespace WebApplication1.Controllers
 
             return Ok(employeesDTOS);
         }
+
+        [HttpPut]
+        [Route("uptade/{id}")]
+        public IActionResult Update(int id, [FromForm] EmployeeViewModel employeeView)
+        {
+            var existingEmployee = _employeeRepository.Get(id);
+            if (existingEmployee == null)
+            {
+                return NotFound("Employee not found");
+            }
+
+            if (employeeView.Photo != null)
+            {
+                var filePath = Path.Combine("Storage", employeeView.Photo.FileName);
+
+                using Stream fileStream = new FileStream(filePath, FileMode.Create);
+                employeeView.Photo.CopyTo(fileStream);
+
+                existingEmployee.photo = filePath;
+            }
+
+            existingEmployee.name = employeeView.Name;
+            existingEmployee.age = employeeView.Age;
+            existingEmployee.registration = employeeView.Registration;
+            existingEmployee.position = employeeView.Position;
+            existingEmployee.salary = employeeView.Salary;
+
+            _employeeRepository.Update(existingEmployee);
+
+            return Ok("Employee updated successfully");
+        }
+
+
+        [HttpDelete]
+        [Route("delete/{id}")]
+        public IActionResult Delete(int id)
+        {
+            var existingEmployee = _employeeRepository.Get(id);
+            if (existingEmployee == null)
+            {
+                return NotFound("Employee not found");
+            }
+
+            _employeeRepository.Delete(id);
+
+            return Ok("Employee deleted successfully");
+        }
+
 
     }
 }

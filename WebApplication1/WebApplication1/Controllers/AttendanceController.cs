@@ -37,6 +37,14 @@ namespace WebApplication1.Controllers
             //    return BadRequest("Cannot register attendance on weekends");
             //}
 
+            var startWorkingHours = new DateTime(now.Year, now.Month, now.Day, 8, 0, 0);
+            var endWorkingHours = new DateTime(now.Year, now.Month, now.Day, 18, 0, 0);
+
+            if (now < startWorkingHours || now > endWorkingHours)
+            {
+                return BadRequest("Cannot register attendance outside of working hours (08:00 to 18:00).");
+            }
+
             var todayAttendance = _attendanceRepository.GetByDate(employeeId, now.Date);
             if (todayAttendance != null)
             {
@@ -63,6 +71,14 @@ namespace WebApplication1.Controllers
 
             var now = DateTime.UtcNow;
 
+            var startWorkingHours = new DateTime(now.Year, now.Month, now.Day, 8, 0, 0);
+            var endWorkingHours = new DateTime(now.Year, now.Month, now.Day, 18, 0, 0);
+
+            if (now < startWorkingHours || now > endWorkingHours)
+            {
+                return BadRequest("Cannot register attendance outside of working hours (08:00 to 18:00).");
+            }
+
             var todayAttendance = _attendanceRepository.GetByDate(employeeId, now.Date);
             if (todayAttendance == null || todayAttendance.exitTime != null)
             {
@@ -83,11 +99,30 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet]
-        [Route("{employeeId}")]
+        [Route("employeeId/{employeeId}")]
 
         public IActionResult GetAttendancesByEmployeeId(int employeeId)
         {
             var attendances = _attendanceRepository.GetbyEmployeeId(employeeId);
+            return Ok(attendances);
+        }
+
+        [HttpGet]
+        [Route("month/{month}")]
+        public IActionResult GetAttendancesByMonth(int month)
+        {
+            if(month < 1 || month > 12)
+            {
+                return BadRequest("Invalid month");
+            }
+
+            var attendances = _attendanceRepository.GetByMonth(month);
+
+            if (attendances == null || attendances.Count == 0)
+            {
+                return NotFound("No attendances found for the specified month.");
+            }
+
             return Ok(attendances);
         }
 
