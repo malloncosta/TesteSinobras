@@ -62,7 +62,7 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public IActionResult Get(int pageNumber, int pageQuantity)
         {
-            _logger.LogInformation("Teste");
+            //_logger.LogInformation("Teste");
             var employees = _employeeRepository.Get(pageNumber, pageQuantity);
             return Ok(employees);
         }
@@ -76,37 +76,6 @@ namespace WebApplication1.Controllers
             var employeesDTOS = _mapper.Map<EmployeeDTO>(employees);
 
             return Ok(employeesDTOS);
-        }
-
-        [HttpPost]
-        [Route("{employeeId}/attendance")]
-        public IActionResult RegisterAttendance(int employeeId)
-        {
-            var employee = _employeeRepository.Get(employeeId);
-            if (employee == null)
-            {
-                return NotFound("Employee not found");
-            }
-
-            //var now = DateTime.Now;
-            var now = DateTime.UtcNow;
-            //if (now.DayOfWeek == DayOfWeek.Saturday || now.DayOfWeek == DayOfWeek.Sunday)
-            //{
-            //    return BadRequest("Cannot register attendance on weekends");
-            //}
-
-            var todayAttendance = _attendanceRepository.GetByDate(employeeId, now.Date);
-            if (todayAttendance != null)
-            {
-                return BadRequest("Attendance already registered for today");
-            }
-
-
-             var attendance = new Attendance(employeeId, DateTime.UtcNow.Date, now, null);
-
-            _attendanceRepository.Add(attendance);
-
-            return Ok("Attendance registered successfully");
         }
 
     }

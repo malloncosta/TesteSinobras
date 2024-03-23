@@ -10,6 +10,6 @@
 
         public DateTime EntryTime { get; set; }
 
-        public DateTime ExitTime { get; set; }
+        public DateTime? ExitTime { get; set; }
     }
 }

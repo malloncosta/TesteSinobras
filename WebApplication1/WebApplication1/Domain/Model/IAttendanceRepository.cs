@@ -7,11 +7,13 @@ namespace WebApplication1.Domain.Model
     {
         void Add(Attendance attendance);
 
-        List<AttendanceDTO> Get(int pageNumber, int pageQuantity);
+        List<AttendanceDTO> Get();
 
-        //Attendance? GetById(int id);
+        Attendance? GetbyEmployeeId(int employeeId);
 
-        Attendance? GetByDate(int employeeId, DateTime date); // Adicionando o método GetByDate
+        Attendance? GetByDate(int employeeId, DateTime date);
+
+        void Update(Attendance attendance);
 
     }
 }

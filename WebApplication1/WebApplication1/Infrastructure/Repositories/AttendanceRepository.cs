@@ -13,10 +13,9 @@ namespace WebApplication1.Infrastructure.Repositories
             _context.SaveChanges();
         }
 
-        public List<AttendanceDTO> Get(int pageNumber, int pageQuantity)
+        public List<AttendanceDTO> Get()
         {
-            return _context.Attendances.Skip(pageNumber * pageQuantity)
-               .Take(pageQuantity)
+            return _context.Attendances
                .Select(b =>
                    new AttendanceDTO()
                    {
@@ -24,19 +23,28 @@ namespace WebApplication1.Infrastructure.Repositories
                        EmployeeId = b.employeeId,
                        Date = b.date,
                        EntryTime = b.entryTime,
+                       ExitTime = b.exitTime
                    }
                ).ToList();
         }
 
-        //public Attendance? GetbyId(int id)
-        //{
-        //    return _context.Attendances.Find(id);
-        //}
+
+        public Attendance? GetbyEmployeeId(int employeeId)
+        {
+            return _context.Attendances.Find(employeeId);
+        }
 
         public Attendance? GetByDate(int employeeId, DateTime date)
         {
             return _context.Attendances
                 .FirstOrDefault(a => a.employeeId == employeeId && a.date == date);
         }
+
+        public void Update(Attendance attendance)
+        {
+            _context.Attendances.Update(attendance);
+            _context.SaveChanges();
+        }
+
     }
 }
