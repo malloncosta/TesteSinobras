@@ -12,17 +12,19 @@ namespace WebApplication1.Controllers
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeRepository _employeeRepository;
+        private readonly IAttendanceRepository _attendanceRepository;
         private readonly ILogger<EmployeeController> _logger;
         private readonly IMapper _mapper;
 
-        public EmployeeController(IEmployeeRepository employeeRepository, ILogger<EmployeeController> logger, IMapper mapper)
+        public EmployeeController(IEmployeeRepository employeeRepository, IAttendanceRepository attendanceRepository, ILogger<EmployeeController> logger, IMapper mapper)
         {
             _employeeRepository = employeeRepository ?? throw new ArgumentNullException(nameof(employeeRepository));
+            _attendanceRepository = attendanceRepository ?? throw new ArgumentNullException(nameof(attendanceRepository));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpPost]
         public IActionResult Add([FromForm] EmployeeViewModel employeeView)
         {
@@ -45,7 +47,7 @@ namespace WebApplication1.Controllers
             return Ok();
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpPost]
         [Route("{id}/employee")]
         public IActionResult DownloadPhoto(int id)
@@ -75,5 +77,35 @@ namespace WebApplication1.Controllers
 
             return Ok(employeesDTOS);
         }
+
+        [HttpPost]
+        [Route("{employeeId}/attendance")]
+        public IActionResult RegisterAttendance(int employeeId)
+        {
+            var employee = _employeeRepository.Get(employeeId);
+            if (employee == null)
+            {
+                return NotFound("Employee not found");
+            }
+
+            var now = DateTime.Now;
+            //if (now.DayOfWeek == DayOfWeek.Saturday || now.DayOfWeek == DayOfWeek.Sunday)
+            //{
+            //    return BadRequest("Cannot register attendance on weekends");
+            //}
+
+            var todayAttendance = _attendanceRepository.GetByDate(employeeId, now.Date);
+            if (todayAttendance != null)
+            {
+                return BadRequest("Attendance already registered for today");
+            }
+
+            var attendance = new Attendance(employeeId, now.Date, now, DateTime.MinValue);
+
+            _attendanceRepository.Add(attendance);
+
+            return Ok("Attendance registered successfully");
+        }
+
     }
 }

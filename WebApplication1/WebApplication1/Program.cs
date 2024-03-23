@@ -50,6 +50,8 @@ builder.Services.AddSwaggerGen(c =>
 });
 builder.Services.AddTransient<IEmployeeRepository, EmployeeRepository>();
 
+builder.Services.AddTransient<IAttendanceRepository, AttendanceRepository>();
+
 var key = Encoding.ASCII.GetBytes(Key.Secret);
 
 builder.Services.AddCors(options =>

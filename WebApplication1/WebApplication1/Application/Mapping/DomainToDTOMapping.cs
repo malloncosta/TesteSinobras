@@ -9,6 +9,9 @@ namespace WebApplication1.Application.Mapping
         public DomainToDTOMapping() { 
             CreateMap<Employee, EmployeeDTO>()
                 .ForMember(dest => dest.NameEmployee, m => m.MapFrom(orig => orig.name));
+
+            CreateMap<Attendance, AttendanceDTO>()
+                .ForMember(dest => dest.EmployeeId, m => m.MapFrom(orig => orig.employeeId));
         }
     }
 }

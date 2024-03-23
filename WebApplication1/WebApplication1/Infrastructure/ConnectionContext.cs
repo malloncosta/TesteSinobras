@@ -6,6 +6,7 @@ namespace WebApplication1.Infrastructure
     public class ConnectionContext : DbContext
     {
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Attendance> Attendances { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
           => optionsBuilder.UseNpgsql(
