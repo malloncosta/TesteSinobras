@@ -21,7 +21,7 @@ namespace WebApplication1.Domain.Model
 
         public Attendance() { }
 
-        public Attendance(int employeeId, DateTime date, DateTime entryTime, DateTime exitTime)
+        public Attendance(int employeeId, DateTime date, DateTime entryTime, DateTime? exitTime)
         {
             this.employeeId = employeeId;
             this.date = date;

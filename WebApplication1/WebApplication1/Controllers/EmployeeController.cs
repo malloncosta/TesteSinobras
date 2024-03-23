@@ -88,7 +88,8 @@ namespace WebApplication1.Controllers
                 return NotFound("Employee not found");
             }
 
-            var now = DateTime.Now;
+            //var now = DateTime.Now;
+            var now = DateTime.UtcNow;
             //if (now.DayOfWeek == DayOfWeek.Saturday || now.DayOfWeek == DayOfWeek.Sunday)
             //{
             //    return BadRequest("Cannot register attendance on weekends");
@@ -100,7 +101,8 @@ namespace WebApplication1.Controllers
                 return BadRequest("Attendance already registered for today");
             }
 
-            var attendance = new Attendance(employeeId, now.Date, now, DateTime.MinValue);
+
+             var attendance = new Attendance(employeeId, DateTime.UtcNow.Date, now, null);
 
             _attendanceRepository.Add(attendance);
 
