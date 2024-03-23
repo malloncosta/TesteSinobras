@@ -11,8 +11,8 @@ using WebApplication1.Infrastructure;
 namespace WebApplication1.Migrations
 {
     [DbContext(typeof(ConnectionContext))]
-    [Migration("20240323004800_InitialFirstMigration")]
-    partial class InitialFirstMigration
+    [Migration("20240323013332_AddOfOthersFields")]
+    partial class AddOfOthersFields
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,6 +41,16 @@ namespace WebApplication1.Migrations
 
                     b.Property<string>("photo")
                         .HasColumnType("text");
+
+                    b.Property<string>("position")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("registration")
+                        .HasColumnType("integer");
+
+                    b.Property<float>("salary")
+                        .HasColumnType("real");
 
                     b.HasKey("id");
 

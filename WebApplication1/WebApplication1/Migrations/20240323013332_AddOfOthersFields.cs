@@ -6,7 +6,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace WebApplication1.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialFirstMigration : Migration
+    public partial class AddOfOthersFields : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,6 +19,9 @@ namespace WebApplication1.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     name = table.Column<string>(type: "text", nullable: false),
                     age = table.Column<int>(type: "integer", nullable: false),
+                    registration = table.Column<int>(type: "integer", nullable: false),
+                    position = table.Column<string>(type: "text", nullable: false),
+                    salary = table.Column<float>(type: "real", nullable: false),
                     photo = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>

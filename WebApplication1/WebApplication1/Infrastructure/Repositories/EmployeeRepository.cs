@@ -21,6 +21,9 @@ namespace WebApplication1.Infrastructure.Repositories
                     {
                         Id = b.id,
                         NameEmployee = b.name,
+                        Registration = b.registration,
+                        Position = b.position,
+                        Salary = b.salary,
                         Photo = b.photo
                     }
                 ).ToList();

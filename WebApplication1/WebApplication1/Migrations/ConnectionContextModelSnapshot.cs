@@ -39,6 +39,16 @@ namespace WebApplication1.Migrations
                     b.Property<string>("photo")
                         .HasColumnType("text");
 
+                    b.Property<string>("position")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("registration")
+                        .HasColumnType("integer");
+
+                    b.Property<float>("salary")
+                        .HasColumnType("real");
+
                     b.HasKey("id");
 
                     b.ToTable("employee");

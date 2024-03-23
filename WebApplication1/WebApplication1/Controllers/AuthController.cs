@@ -12,7 +12,7 @@ namespace WebApplication1.Controllers
         {
             if(username == "user" && password == "123")
             {
-                var token = TokenService.GenerateToken(new Domain.Model.Employee(username, 123, "sfsdafds"));
+                var token = TokenService.GenerateToken(new Domain.Model.Employee(username, 123, 2516545, "Adm", 6000, "sfasfds"));
                 return Ok(token);
             }
 

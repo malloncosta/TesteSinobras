@@ -3,44 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B1F150EF-B90E-4A9B-81B3-81108ACF8682}|WebApplication1\\WebApplication1.csproj|c:\\users\\mallo\\onedrive\\documents\\teste 02\\webapplication1\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1F150EF-B90E-4A9B-81B3-81108ACF8682}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Migrations\\20240323004800_InitialFirstMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WebApplication1\\Migrations\\20240323004800_InitialFirstMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B1F150EF-B90E-4A9B-81B3-81108ACF8682}|WebApplication1\\WebApplication1.csproj|c:\\users\\mallo\\onedrive\\documents\\teste 02\\webapplication1\\webapplication1\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B1F150EF-B90E-4A9B-81B3-81108ACF8682}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B1F150EF-B90E-4A9B-81B3-81108ACF8682}|WebApplication1\\WebApplication1.csproj|c:\\users\\mallo\\onedrive\\documents\\teste 02\\webapplication1\\webapplication1\\application\\mapping\\domaintodtomapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1F150EF-B90E-4A9B-81B3-81108ACF8682}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\application\\mapping\\domaintodtomapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1F150EF-B90E-4A9B-81B3-81108ACF8682}|WebApplication1\\WebApplication1.csproj|c:\\users\\mallo\\onedrive\\documents\\teste 02\\webapplication1\\webapplication1\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1F150EF-B90E-4A9B-81B3-81108ACF8682}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1F150EF-B90E-4A9B-81B3-81108ACF8682}|WebApplication1\\WebApplication1.csproj|c:\\users\\mallo\\onedrive\\documents\\teste 02\\webapplication1\\webapplication1\\domain\\dtos\\employeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1F150EF-B90E-4A9B-81B3-81108ACF8682}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\domain\\dtos\\employeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1F150EF-B90E-4A9B-81B3-81108ACF8682}|WebApplication1\\WebApplication1.csproj|c:\\users\\mallo\\onedrive\\documents\\teste 02\\webapplication1\\webapplication1\\infrastructure\\repositories\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1F150EF-B90E-4A9B-81B3-81108ACF8682}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\infrastructure\\repositories\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1F150EF-B90E-4A9B-81B3-81108ACF8682}|WebApplication1\\WebApplication1.csproj|c:\\users\\mallo\\onedrive\\documents\\teste 02\\webapplication1\\webapplication1\\domain\\model\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1F150EF-B90E-4A9B-81B3-81108ACF8682}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\domain\\model\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B1F150EF-B90E-4A9B-81B3-81108ACF8682}|WebApplication1\\WebApplication1.csproj|c:\\users\\mallo\\onedrive\\documents\\teste 02\\webapplication1\\webapplication1\\application\\viewmodel\\employeeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1F150EF-B90E-4A9B-81B3-81108ACF8682}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\application\\viewmodel\\employeeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B1F150EF-B90E-4A9B-81B3-81108ACF8682}|WebApplication1\\WebApplication1.csproj|c:\\users\\mallo\\onedrive\\documents\\teste 02\\webapplication1\\webapplication1\\domain\\model\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B1F150EF-B90E-4A9B-81B3-81108ACF8682}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\domain\\model\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B1F150EF-B90E-4A9B-81B3-81108ACF8682}|WebApplication1\\WebApplication1.csproj|c:\\users\\mallo\\onedrive\\documents\\teste 02\\webapplication1\\webapplication1\\controllers\\throwcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1F150EF-B90E-4A9B-81B3-81108ACF8682}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\throwcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B1F150EF-B90E-4A9B-81B3-81108ACF8682}|WebApplication1\\WebApplication1.csproj|c:\\users\\mallo\\onedrive\\documents\\teste 02\\webapplication1\\webapplication1\\domain\\model\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1F150EF-B90E-4A9B-81B3-81108ACF8682}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\domain\\model\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1F150EF-B90E-4A9B-81B3-81108ACF8682}|WebApplication1\\WebApplication1.csproj|c:\\users\\mallo\\onedrive\\documents\\teste 02\\webapplication1\\webapplication1\\infrastructure\\repositories\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1F150EF-B90E-4A9B-81B3-81108ACF8682}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\infrastructure\\repositories\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1F150EF-B90E-4A9B-81B3-81108ACF8682}|WebApplication1\\WebApplication1.csproj|c:\\users\\mallo\\onedrive\\documents\\teste 02\\webapplication1\\webapplication1\\domain\\dtos\\employeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1F150EF-B90E-4A9B-81B3-81108ACF8682}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\domain\\dtos\\employeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,71 +34,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "20240323004800_InitialFirstMigration.cs",
-              "DocumentMoniker": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Migrations\\20240323004800_InitialFirstMigration.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Migrations\\20240323004800_InitialFirstMigration.cs",
-              "ToolTip": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Migrations\\20240323004800_InitialFirstMigration.cs",
-              "RelativeToolTip": "WebApplication1\\Migrations\\20240323004800_InitialFirstMigration.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 3,
+              "Title": "IEmployeeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Domain\\Model\\IEmployeeRepository.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Domain\\Model\\IEmployeeRepository.cs",
+              "ToolTip": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Domain\\Model\\IEmployeeRepository.cs",
+              "RelativeToolTip": "WebApplication1\\Domain\\Model\\IEmployeeRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-23T00:48:00.385Z",
+              "WhenOpened": "2024-03-23T01:49:12.078Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "EmployeeController.cs",
-              "DocumentMoniker": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Controllers\\EmployeeController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\EmployeeController.cs",
-              "ToolTip": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Controllers\\EmployeeController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\EmployeeController.cs",
-              "ViewState": "AQIAADgAAAAAAAAAAAAuwEEAAAAAAAAA",
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Domain\\Model\\Employee.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Domain\\Model\\Employee.cs",
+              "ToolTip": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Domain\\Model\\Employee.cs",
+              "RelativeToolTip": "WebApplication1\\Domain\\Model\\Employee.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwCMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-23T00:32:13.552Z",
+              "WhenOpened": "2024-03-23T01:51:48.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmployeeViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Application\\ViewModel\\EmployeeViewModel.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Application\\ViewModel\\EmployeeViewModel.cs",
+              "ToolTip": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Application\\ViewModel\\EmployeeViewModel.cs",
+              "RelativeToolTip": "WebApplication1\\Application\\ViewModel\\EmployeeViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-23T01:27:48.686Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Program.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Program.cs",
-              "ToolTip": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Program.cs",
-              "RelativeToolTip": "WebApplication1\\Program.cs",
-              "ViewState": "AQIAADAAAAAAAAAAAAAYwD0AAAAMAAAA",
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\EmployeeController.cs",
+              "ToolTip": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\EmployeeController.cs",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAcwE8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-23T00:15:55.603Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DomainToDTOMapping.cs",
-              "DocumentMoniker": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Application\\Mapping\\DomainToDTOMapping.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Application\\Mapping\\DomainToDTOMapping.cs",
-              "ToolTip": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Application\\Mapping\\DomainToDTOMapping.cs",
-              "RelativeToolTip": "WebApplication1\\Application\\Mapping\\DomainToDTOMapping.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-23T00:10:50.492Z",
+              "WhenOpened": "2024-03-23T01:32:04.052Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\AuthController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAANAAAA",
+              "Title": "EmployeeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Infrastructure\\Repositories\\EmployeeRepository.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Infrastructure\\Repositories\\EmployeeRepository.cs",
+              "ToolTip": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Infrastructure\\Repositories\\EmployeeRepository.cs",
+              "RelativeToolTip": "WebApplication1\\Infrastructure\\Repositories\\EmployeeRepository.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwA4AAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T22:42:57.127Z",
+              "WhenOpened": "2024-03-23T01:28:01.394Z",
               "EditorCaption": ""
             },
             {
@@ -125,61 +109,9 @@
               "RelativeDocumentMoniker": "WebApplication1\\Domain\\DTOs\\EmployeeDTO.cs",
               "ToolTip": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Domain\\DTOs\\EmployeeDTO.cs",
               "RelativeToolTip": "WebApplication1\\Domain\\DTOs\\EmployeeDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAFAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAIAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T22:29:41.479Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "EmployeeRepository.cs",
-              "DocumentMoniker": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Infrastructure\\Repositories\\EmployeeRepository.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Infrastructure\\Repositories\\EmployeeRepository.cs",
-              "ToolTip": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Infrastructure\\Repositories\\EmployeeRepository.cs",
-              "RelativeToolTip": "WebApplication1\\Infrastructure\\Repositories\\EmployeeRepository.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAQwBkAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T22:23:59.445Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IEmployeeRepository.cs",
-              "DocumentMoniker": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Domain\\Model\\IEmployeeRepository.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Domain\\Model\\IEmployeeRepository.cs",
-              "ToolTip": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Domain\\Model\\IEmployeeRepository.cs",
-              "RelativeToolTip": "WebApplication1\\Domain\\Model\\IEmployeeRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T22:22:29.929Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Employee.cs",
-              "DocumentMoniker": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Domain\\Model\\Employee.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Domain\\Model\\Employee.cs",
-              "ToolTip": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Domain\\Model\\Employee.cs",
-              "RelativeToolTip": "WebApplication1\\Domain\\Model\\Employee.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAIBJwBAAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T22:22:15.73Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ThrowController.cs",
-              "DocumentMoniker": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Controllers\\ThrowController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\ThrowController.cs",
-              "ToolTip": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\WebApplication1\\WebApplication1\\Controllers\\ThrowController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\ThrowController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAIBZwAUAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T22:08:27.025Z",
+              "WhenOpened": "2024-03-23T01:27:17.86Z",
               "EditorCaption": ""
             }
           ]
