@@ -6,6 +6,8 @@
 
         public required string NameEmployee { get; set; }
 
+        public int Age { get; set; }
+
         public int Registration {  get; set; }
 
         public required string Position { get; set; }

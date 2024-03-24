@@ -61,7 +61,26 @@ export class CollaboratorsComponent {
   }
 
   goRegister(){
-    this.router.navigate(['/register'])
+    const queryParams = {
+      update: true,
+    };
+
+    this.router.navigate(['/register'], {
+      queryParams: queryParams
+    })
+  }
+
+  goUpdate(collaborator: any){
+    const queryParams = {
+      update: true,
+      idEmployee: collaborator.id,
+    };
+
+    localStorage.setItem('collaborator', JSON.stringify(collaborator));
+
+    this.router.navigate(['/register'], {
+      queryParams: queryParams,
+    });
   }
 
 }

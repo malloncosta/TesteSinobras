@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import {
   FormBuilder,
@@ -12,7 +13,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { CommonModule, JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-register',
@@ -34,6 +35,8 @@ export class RegisterComponent {
   formRegister: FormGroup;
 
   selectedFile: File | null = null;
+  urlParams: any;
+  collaboratorData: any;
 
   onFileSelected(event: any) {
     this.selectedFile = event.target.files[0];
@@ -42,6 +45,8 @@ export class RegisterComponent {
 
   constructor(
     public formBuilder: FormBuilder,
+    private activatedRoute: ActivatedRoute,
+
   ) {
     this.formRegister = this.formBuilder.group({
       full_name: ['', [Validators.required, Validators.minLength(2)]],
@@ -51,6 +56,34 @@ export class RegisterComponent {
       register: ['', [Validators.required]],
       photo: ['', [Validators.required]]
     })
+
+    this.urlParams = this.activatedRoute.snapshot.queryParams;
+    console.log(this.urlParams)
+
+    this.collaboratorData = localStorage.getItem('collaborator');
+
+    if(this.urlParams.update && this.collaboratorData){
+      const collaborator = JSON.parse(this.collaboratorData);
+      this.formRegister = this.formBuilder.group({
+        full_name: [collaborator.nameEmployee, [Validators.required, Validators.minLength(2)]],
+        position: [collaborator.position, [Validators.required]],
+        age: [collaborator.age, [Validators.required]],
+        salary: [collaborator.salary, [Validators.required]],
+        register: [collaborator.registration, [Validators.required]],
+        photo: [collaborator.photo, [Validators.required]]
+      })
+    }
+
+    /* if(data.update){
+      this.formRegister = this.formBuilder.group({
+        full_name: [data., [Validators.required, Validators.minLength(2)]],
+        position: ['', [Validators.required]],
+        age: ['', [Validators.required]],
+        salary: ['', [Validators.required]],
+        register: ['', [Validators.required]],
+        photo: ['', [Validators.required]]
+      })
+    } */
   }
 
   async submitForm() {
@@ -70,23 +103,36 @@ export class RegisterComponent {
 
 
   async enviarRequisicao(formData: FormData) {
-    try {
-      const requestOptions = {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': '*/*'
+
+      try {
+        const requestOptions = {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': '*/*'
+          }
+        };
+
+        let response;
+
+        if(this.urlParams && this.collaboratorData){
+          requestOptions.method = 'PUT'
+
+          response = await fetch(`http://localhost:5046/api/v1/employee/update/${this.urlParams.idEmployee}`, requestOptions);
+
+        } else {
+          requestOptions.method = 'POST'
+
+          response = await fetch('http://localhost:5046/api/v1/employee', requestOptions);
+
         }
-      };
-  
-      const response = await fetch('http://localhost:5046/api/v1/employee', requestOptions);
-  
-      console.log('Resposta:', response.status);
-    } catch (error) {
-      console.error('Erro ao enviar requisição:', error);
-    }
+
+        console.log('Resposta:', response.status);
+      } catch (error) {
+        console.error('Erro ao enviar requisição:', error);
+      }
+
   }
-  
 
 
 }

@@ -80,7 +80,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPut]
-        [Route("uptade/{id}")]
+        [Route("update/{id}")]
         public IActionResult Update(int id, [FromForm] EmployeeViewModel employeeView)
         {
             var existingEmployee = _employeeRepository.Get(id);

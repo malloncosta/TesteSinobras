@@ -22,6 +22,7 @@ namespace WebApplication1.Infrastructure.Repositories
                     {
                         Id = b.id,
                         NameEmployee = b.name,
+                        Age = b.age,
                         Registration = b.registration,
                         Position = b.position,
                         Salary = b.salary,
