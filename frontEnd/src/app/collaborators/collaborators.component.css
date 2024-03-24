@@ -12,3 +12,17 @@
     margin-top: 20px;
     width: 80%;
 }
+
+  .example-flex-container {
+    float: right;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }

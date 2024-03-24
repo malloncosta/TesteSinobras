@@ -1,6 +1,52 @@
 <main class="content">
     <strong class="title">Colaboradores</strong>
     <mat-card class="card">
-        <mat-card-content>Simple card</mat-card-content>
+        <mat-card-content>
+            <div *ngFor="let collaborator of collaborators" style="padding: 15px;">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title-group>
+                        <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
+                          <mat-card-title> <strong>Nome:</strong> {{collaborator.nameEmployee}}</mat-card-title>
+                          <mat-card-subtitle> <strong>Cargo:</strong> {{collaborator.position}}</mat-card-subtitle>
+                          <mat-card-subtitle> <strong>Matrícula:</strong> {{collaborator.registration}}</mat-card-subtitle>
+                          <mat-card-subtitle> <strong>Salário:</strong> {{collaborator.salary}}</mat-card-subtitle>
+                        </mat-card-title-group>
+                      </mat-card-header>
+                      <mat-card-content>
+                      </mat-card-content>
+                      <mat-card-actions>
+                        <button mat-button (click)="deleteCollaborator(collaborator.id)"><mat-icon>delete</mat-icon></button>
+                        <button mat-button><mat-icon>update</mat-icon></button>
+                      </mat-card-actions>
+
+                      <!-- <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title>Nome: <strong>{{collaborator.nameEmployee}}</strong></mat-card-title>
+                        <mat-card-subtitle>Cargo: <strong>{{collaborator.position}}</strong></mat-card-subtitle>
+                        <mat-card-subtitle>Matricula: <strong>{{collaborator.registration}}</strong></mat-card-subtitle>
+                        <mat-card-subtitle>Salário: <strong>{{collaborator.salary}}</strong></mat-card-subtitle>
+
+                      </mat-card-header>
+                      <mat-card-content>
+                        <p>
+                         
+                        </p>
+                      </mat-card-content>
+                      <mat-card-actions>
+                        <button mat-button>LIKE</button>
+                        <button mat-button>SHARE</button>
+                      </mat-card-actions> -->
+                </mat-card>
+            </div>
+        </mat-card-content>
     </mat-card>
+
+    <div class="example-flex-container">
+        <div class="example-button-container">
+          <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+      </div>
 </main>
