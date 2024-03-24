@@ -34,21 +34,21 @@
             </div>
         </div> -->
 
-        <form class="example-form" #form="ngForm" (ngSubmit)="submitForm(form)">
+        <form class="example-form" [formGroup]="formRegister" (ngSubmit)="submitForm()">
             <mat-form-field class="example-full-width">
                 <mat-label>Entre com o nome completo</mat-label>
-                <input matInput #input placeholder="Ex. João da Silva Soares">
+                <input matInput #input placeholder="Ex. João da Silva Soares" formControlName="full_name">
             </mat-form-field>
 
             <table class="example-full-width" cellspacing="0">
                 <tr>
                     <td><mat-form-field class="example-full-width">
                             <mat-label>Entre com o cargo</mat-label>
-                            <input matInput #input maxlength="10" placeholder="Ex. Analista de Sistemas">
+                            <input matInput #input placeholder="Ex. Analista de Sistemas" formControlName="position">
                         </mat-form-field></td>
                     <td><mat-form-field class="example-full-width">
                             <mat-label>Entre com a idade</mat-label>
-                            <input matInput #input class="small-input" maxlength="10" placeholder="Ex. 18">
+                            <input matInput #input class="small-input" maxlength="3" placeholder="Ex. 18" formControlName="age">
                         </mat-form-field></td>
                 </tr>
             </table>
@@ -57,23 +57,22 @@
                 <tr>
                     <td><mat-form-field class="example-full-width">
                         <mat-label>Entre com o salário</mat-label>
-                        <input matInput type="number" class="example-right-align" placeholder="0">
+                        <input matInput type="number" class="example-right-align" placeholder="0" formControlName="salary">
                         <span matTextPrefix>$&nbsp;</span>
                         <span matTextSuffix>.00</span>
                         </mat-form-field></td>
                     <td><mat-form-field class="example-full-width">
-                            <mat-label>State</mat-label>
-                            <input matInput placeholder="Ex. California">
+                            <mat-label>Matrícula</mat-label>
+                            <input matInput placeholder="Ex. 456151" formControlName="register">
                         </mat-form-field></td>
                 </tr>
             </table>
+
+            <div style="display: flex; justify-content:space-around;">
+                <button mat-raised-button color="accent">Cancelar</button>
+                <button mat-raised-button color="primary" type="submit">Salvar</button>
+            </div>
         </form>
-
-        <div style="display: flex; justify-content:space-around;">
-            <button mat-raised-button color="accent">Cancelar</button>
-            <button mat-raised-button color="primary"  (click)="saveData()">Salvar</button>
-        </div>
-
         
     </mat-card>
 </main>

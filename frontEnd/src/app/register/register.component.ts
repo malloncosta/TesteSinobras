@@ -5,29 +5,58 @@ import { MatCardModule } from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
-import { FormsModule, NgForm } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [MatIconModule, MatButtonModule, MatCardModule, MatInputModule, MatFormFieldModule, FormsModule],
+  imports: [
+    MatIconModule, 
+    MatButtonModule, 
+    MatCardModule, 
+    MatInputModule, 
+    MatFormFieldModule, 
+    FormsModule,
+    ReactiveFormsModule,
+    CommonModule
+  ],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
+  formRegister: FormGroup;
 
-  submitForm(form: any) {
-    console.log(form.value);
-    // Aqui você tem acesso aos valores do formulário
-    // por exemplo, form.value.nomeCompleto, form.value.cargo, etc.
+  constructor(
+    public formBuilder: FormBuilder,
+  ){
+    this.formRegister = this.formBuilder.group({
+      full_name: ['', [Validators.required, Validators.minLength(2)]],
+      position: ['', [Validators.required]],
+      age: ['', [Validators.required]],
+      salary: ['', [Validators.required]],
+      register: ['', [Validators.required]],
+    })
   }
 
-  saveData() {
-    // Obtenha os valores do formulário usando NgForm
-    const formData: NgForm = {} as NgForm; // Atribua o formulário ao objeto NgForm
+  async submitForm() {
+    const formData = this.formRegister.value;
 
-    console.log(formData)
-    
+    const combined = {
+      full_name: formData.full_name,
+      position: formData.position,
+      age: formData.age,
+      salary: formData.salary,
+      register: formData.register,
+    }
+
+    console.log(combined)
   }
 
 }
