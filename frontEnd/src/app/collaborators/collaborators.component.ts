@@ -4,6 +4,7 @@ import { RestMethods } from '../../../providers/rest-methods';
 import { CommonModule } from '@angular/common';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-collaborators',
@@ -36,6 +37,7 @@ export class CollaboratorsComponent {
 
   constructor(
     private rest: RestMethods,
+    private router: Router,
   ) {
     this.getCollaborators();
   }
@@ -56,6 +58,10 @@ export class CollaboratorsComponent {
       console.log("apagado com sucesso")
       this.getCollaborators();
     }
+  }
+
+  goRegister(){
+    this.router.navigate(['/register'])
   }
 
 }
