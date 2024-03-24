@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 using WebApplication1.Application.ViewModel;
 using WebApplication1.Domain.DTOs;
 using WebApplication1.Domain.Model;
@@ -44,7 +45,7 @@ namespace WebApplication1.Controllers
 
             _employeeRepository.Add(employee);
 
-            return Ok();
+            return Ok("Employee created");
         }
 
         //[Authorize]

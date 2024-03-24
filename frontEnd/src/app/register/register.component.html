@@ -48,7 +48,7 @@
                         </mat-form-field></td>
                     <td><mat-form-field class="example-full-width">
                             <mat-label>Entre com a idade</mat-label>
-                            <input matInput #input class="small-input" maxlength="3" placeholder="Ex. 18" formControlName="age">
+                            <input matInput #input type="number" class="small-input" maxlength="3" placeholder="Ex. 18" formControlName="age">
                         </mat-form-field></td>
                 </tr>
             </table>
@@ -67,6 +67,8 @@
                         </mat-form-field></td>
                 </tr>
             </table>
+            
+            <input type="file" (change)="onFileSelected($event)">
 
             <div style="display: flex; justify-content:space-around;">
                 <button mat-raised-button color="accent">Cancelar</button>
