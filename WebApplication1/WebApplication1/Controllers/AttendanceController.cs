@@ -94,9 +94,21 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public IActionResult GetAttendances()
         {
-            var attendances = _attendanceRepository.Get();
-            return Ok(attendances);
+            var attendancesWithEmployee = _attendanceRepository.Get()
+                .Where(attendance => attendance.EmployeeId != 0)
+                .Select(attendance => new {
+                    AttendanceId = attendance.Id,
+                    Date = attendance.Date,
+                    EntryTime = attendance.EntryTime,
+                    ExitTime = attendance.ExitTime,
+                    Employee = _employeeRepository.Get(attendance.EmployeeId)
+                })
+                .ToList();
+
+            return Ok(attendancesWithEmployee);
         }
+
+
 
         [HttpGet]
         [Route("employeeId/{employeeId}")]

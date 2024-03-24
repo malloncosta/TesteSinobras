@@ -32,4 +32,8 @@ export class AppComponent {
     this.router.navigate(['/collaborators'])
   }
 
+  goRegisterPoint(){
+    this.router.navigate(['/register-point'])
+  }
+
 }

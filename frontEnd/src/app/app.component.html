@@ -43,13 +43,13 @@
   <mat-drawer #drawer opened="true" mode="side" position="start">
     <mat-nav-list>
       <mat-list-item>
-        <button routerLink="" mat-button><mat-icon>home</mat-icon> Home</button>
+        <button mat-button><mat-icon>home</mat-icon> Home</button>
       </mat-list-item>
       <mat-list-item>
-        <button routerLink="card" mat-button (click)="goCollaborators()" ><mat-icon>people</mat-icon> Colaboradores</button>
+        <button mat-button (click)="goCollaborators()" ><mat-icon>people</mat-icon> Colaboradores</button>
       </mat-list-item>
       <mat-list-item>
-        <button mat-button><mat-icon>check</mat-icon> Registrar Ponto</button>
+        <button mat-button (click)="goRegisterPoint()"><mat-icon>check</mat-icon> Registrar Ponto</button>
       </mat-list-item>
       <mat-list-item>
         <button mat-button><mat-icon>analytics</mat-icon> Relatório</button>

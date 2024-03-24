@@ -48,7 +48,6 @@ export class CollaboratorsComponent {
     if(status === 200){
       this.collaborators = response;
     }
-    console.log(this.collaborators)
   }
 
   async deleteCollaborator(id: number){

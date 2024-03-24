@@ -63,10 +63,24 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public IActionResult Get(int pageNumber, int pageQuantity)
         {
-            //_logger.LogInformation("Teste");
-            var employees = _employeeRepository.Get(pageNumber, pageQuantity);
-            return Ok(employees);
+            var employeesWithAttendance = _employeeRepository.Get(pageNumber, pageQuantity)
+                .Select(employee => new {
+                    EmployeeId = employee.Id,
+                    Name = employee.NameEmployee,
+                    Age = employee.Age,
+                    Position = employee.Position,
+                    Salary = employee.Salary,
+                    Registration = employee.Registration,
+                    Photo = employee.Photo,
+                    Attendance = _attendanceRepository.GetbyEmployeeId(employee.Id) 
+                })
+                .Skip((pageNumber - 1) * pageQuantity)
+                .Take(pageQuantity) 
+                .ToList();
+
+            return Ok(employeesWithAttendance);
         }
+
 
         [HttpGet]
         [Route("{id}")]

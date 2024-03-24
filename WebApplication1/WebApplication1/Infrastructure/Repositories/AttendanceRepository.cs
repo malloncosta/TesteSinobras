@@ -31,7 +31,7 @@ namespace WebApplication1.Infrastructure.Repositories
 
         public Attendance? GetbyEmployeeId(int employeeId)
         {
-            return _context.Attendances.Find(employeeId);
+            return _context.Attendances.FirstOrDefault(a => a.employeeId == employeeId);
         }
 
         public Attendance? GetByDate(int employeeId, DateTime date)
