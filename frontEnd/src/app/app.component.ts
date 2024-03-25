@@ -40,4 +40,8 @@ export class AppComponent {
     this.router.navigate(['/report'])
   }
 
+  goAbout(){
+    this.router.navigate(['/about'])
+  }
+
 }
