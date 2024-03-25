@@ -26,3 +26,8 @@
     justify-content: center;
     width: 120px;
   }
+
+  .registered {
+    background-color: gray; /* ou qualquer outra cor desejada */
+    color: white; /* ou outra cor de texto que contraste com o fundo */
+}

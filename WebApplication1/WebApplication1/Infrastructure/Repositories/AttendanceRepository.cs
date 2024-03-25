@@ -47,10 +47,10 @@ namespace WebApplication1.Infrastructure.Repositories
             _context.SaveChanges();
         }
 
-        public List<AttendanceDTO> GetByMonth(int month)
+        public List<AttendanceDTO> GetByYearMonth(int year, int month)
         {
             return _context.Attendances
-                .Where(b => b.date.Month == month)
+                .Where(b => b.date.Year == year && b.date.Month == month)
                 .Select(b =>
                     new AttendanceDTO()
                     {

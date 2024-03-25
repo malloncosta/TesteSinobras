@@ -81,7 +81,6 @@ namespace WebApplication1.Controllers
             return Ok(employeesWithAttendance);
         }
 
-
         [HttpGet]
         [Route("{id}")]
         public IActionResult Search(int id)

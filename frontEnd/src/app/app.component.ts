@@ -36,4 +36,8 @@ export class AppComponent {
     this.router.navigate(['/register-point'])
   }
 
+  goReport(){
+    this.router.navigate(['/report'])
+  }
+
 }

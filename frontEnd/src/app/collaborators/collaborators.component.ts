@@ -34,12 +34,14 @@ export class CollaboratorsComponent {
   ] */
 
   collaborators: any;
+  imageSrc: string = '';
 
   constructor(
     private rest: RestMethods,
     private router: Router,
   ) {
     this.getCollaborators();
+    //this.getTemporaryImage();
   }
 
   async getCollaborators() {
@@ -47,6 +49,7 @@ export class CollaboratorsComponent {
     const [status, response] = await this.rest.getData(url);
     if(status === 200){
       this.collaborators = response;
+      console.log(this.collaborators)
     }
   }
 
@@ -67,6 +70,28 @@ export class CollaboratorsComponent {
     this.router.navigate(['/register'], {
       queryParams: queryParams
     })
+  }
+
+  async getTemporaryImage() {
+    const imageUrl = `http://localhost:5046/api/v1/employee/image/${21}`;
+
+    try {
+      const response = await fetch(imageUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+      });
+
+      if (response.ok) {
+        const blob = await response.blob(); 
+        this.imageSrc = URL.createObjectURL(blob);
+      } else {
+        console.error('Erro ao obter a imagem:', response.status);
+      }
+    } catch (error) {
+      console.error('Erro ao obter a imagem:', error);
+    }
   }
 
   goUpdate(collaborator: any){

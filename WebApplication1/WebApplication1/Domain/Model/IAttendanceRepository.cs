@@ -15,7 +15,7 @@ namespace WebApplication1.Domain.Model
 
         void Update(Attendance attendance);
 
-        List<AttendanceDTO> GetByMonth(int month);
+        List<AttendanceDTO> GetByYearMonth(int year, int month);
 
     }
 }

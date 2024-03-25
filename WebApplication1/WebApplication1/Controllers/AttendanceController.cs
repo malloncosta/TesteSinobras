@@ -120,22 +120,31 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet]
-        [Route("month/{month}")]
-        public IActionResult GetAttendancesByMonth(int month)
+        [Route("year{year}/month/{month}")]
+        public IActionResult GetAttendancesByMonth(int year, int month, int pageNumber, int pageQuantity)
         {
-            if(month < 1 || month > 12)
+
+            if (month < 1 || month > 12)
             {
                 return BadRequest("Invalid month");
             }
 
-            var attendances = _attendanceRepository.GetByMonth(month);
+            var employeesWithAttendance = _employeeRepository.Get(pageNumber, pageQuantity)
+                .Select(employee => new {
+                EmployeeId = employee.Id,
+                Name = employee.NameEmployee,
+                Age = employee.Age,
+                Position = employee.Position,
+                Salary = employee.Salary,
+                Registration = employee.Registration,
+                Photo = employee.Photo,
+                Attendance = _attendanceRepository.GetByYearMonth(year, month)
+                })
+                .Skip((pageNumber - 1) * pageQuantity)
+                .Take(pageQuantity)
+                .ToList();
 
-            if (attendances == null || attendances.Count == 0)
-            {
-                return NotFound("No attendances found for the specified month.");
-            }
-
-            return Ok(attendances);
+            return Ok(employeesWithAttendance);
         }
 
     }
