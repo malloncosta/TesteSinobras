@@ -1,0 +1,33 @@
+version: '3.4'
+
+services:
+  webapi:
+    image: ${DOCKER_REGISTRY-}webapi
+    build:
+      context: ./Webapi
+      dockerfile: Webapi/Dockerfile
+    container_name: webapi
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres
+    volumes:
+      - ./Database/employee.sql:/docker-entrypoint-initdb.d/employee.sql
+    container_name: postgres
+    environment:
+      POSTGRES_PASSWORD: "123"
+    ports:
+      - "5432:5432"
+  
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "4200:4200"
+    

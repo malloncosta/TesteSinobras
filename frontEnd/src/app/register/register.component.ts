@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ActivatedRoute, Router } from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { environment } from '../../environments/environment';
 
 import {
   FormBuilder,
@@ -110,13 +111,13 @@ export class RegisterComponent {
         if(this.urlParams.update === "true" && this.collaboratorData){
           requestOptions.method = 'PUT'
 
-          response = await fetch(`http://localhost:5046/api/v1/employee/update/${this.urlParams.idEmployee}`, requestOptions);
+          response = await fetch(`${environment.urlApi}/api/v1/employee/update/${this.urlParams.idEmployee}`, requestOptions);
 
           this.openSnackBar("Cadastro atualizado!", "Sucesso")
         } else {
           requestOptions.method = 'POST'
 
-          response = await fetch('http://localhost:5046/api/v1/employee', requestOptions);
+          response = await fetch(`${environment.urlApi}/api/v1/employee`, requestOptions);
 
           this.openSnackBar("Cadastro bem sucedido!", "Sucesso")
         }

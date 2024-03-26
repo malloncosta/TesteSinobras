@@ -12,7 +12,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { RestMethods } from '../../../providers/rest-methods';
 import { CommonModule } from '@angular/common';
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import { environment } from '../../environments/environment';
 
 const moment = _rollupMoment || _moment;
 
@@ -78,7 +78,7 @@ export class ReportComponent {
   }
 
   async getPointRegisted(year: number, month: number){
-    const url = `http://localhost:5046/api/v1/attendance/year/${year}/month/${month}?pageNumber=0&pageQuantity=10`
+    const url = `${environment.urlApi}/api/v1/attendance/year/${year}/month/${month}?pageNumber=0&pageQuantity=10`
     const [status, response] = await this.rest.getData(url);
     if(status === 200){
       this.collaborators = response;
@@ -89,7 +89,7 @@ export class ReportComponent {
 
   async preloadImages() {
     for (const collaborator of this.collaborators) {
-      const imageUrl = `http://localhost:5046/api/v1/employee/image/${collaborator.employeeId}`;
+      const imageUrl = `${environment.urlApi}/api/v1/employee/image/${collaborator.employeeId}`;
       try {
         const response = await fetch(imageUrl, {
           method: 'POST',

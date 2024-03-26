@@ -1,0 +1,199 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\Webapi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{93F56D9D-D8E0-499C-8AA3-6A8517C61E2B}|Webapi\\Webapi.csproj|c:\\users\\mallo\\onedrive\\documents\\teste 02\\webapi\\webapi\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93F56D9D-D8E0-499C-8AA3-6A8517C61E2B}|Webapi\\Webapi.csproj|solutionrelative:webapi\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93F56D9D-D8E0-499C-8AA3-6A8517C61E2B}|Webapi\\Webapi.csproj|c:\\users\\mallo\\onedrive\\documents\\teste 02\\webapi\\webapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{93F56D9D-D8E0-499C-8AA3-6A8517C61E2B}|Webapi\\Webapi.csproj|solutionrelative:webapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A119372A-7A52-4B7B-BF02-70678CCF95DA}|docker-compose.dcproj|c:\\users\\mallo\\onedrive\\documents\\teste 02\\webapi\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A119372A-7A52-4B7B-BF02-70678CCF95DA}|docker-compose.dcproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93F56D9D-D8E0-499C-8AA3-6A8517C61E2B}|Webapi\\Webapi.csproj|c:\\users\\mallo\\onedrive\\documents\\teste 02\\webapi\\webapi\\application\\mapping\\domaintodtomapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93F56D9D-D8E0-499C-8AA3-6A8517C61E2B}|Webapi\\Webapi.csproj|solutionrelative:webapi\\application\\mapping\\domaintodtomapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93F56D9D-D8E0-499C-8AA3-6A8517C61E2B}|Webapi\\Webapi.csproj|c:\\users\\mallo\\onedrive\\documents\\teste 02\\webapi\\webapi\\application\\viewmodel\\employeeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93F56D9D-D8E0-499C-8AA3-6A8517C61E2B}|Webapi\\Webapi.csproj|solutionrelative:webapi\\application\\viewmodel\\employeeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93F56D9D-D8E0-499C-8AA3-6A8517C61E2B}|Webapi\\Webapi.csproj|c:\\users\\mallo\\onedrive\\documents\\teste 02\\webapi\\webapi\\infrastructure\\repositories\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93F56D9D-D8E0-499C-8AA3-6A8517C61E2B}|Webapi\\Webapi.csproj|solutionrelative:webapi\\infrastructure\\repositories\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93F56D9D-D8E0-499C-8AA3-6A8517C61E2B}|Webapi\\Webapi.csproj|c:\\users\\mallo\\onedrive\\documents\\teste 02\\webapi\\webapi\\infrastructure\\repositories\\attendancerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93F56D9D-D8E0-499C-8AA3-6A8517C61E2B}|Webapi\\Webapi.csproj|solutionrelative:webapi\\infrastructure\\repositories\\attendancerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93F56D9D-D8E0-499C-8AA3-6A8517C61E2B}|Webapi\\Webapi.csproj|c:\\users\\mallo\\onedrive\\documents\\teste 02\\webapi\\webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93F56D9D-D8E0-499C-8AA3-6A8517C61E2B}|Webapi\\Webapi.csproj|solutionrelative:webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93F56D9D-D8E0-499C-8AA3-6A8517C61E2B}|Webapi\\Webapi.csproj|c:\\users\\mallo\\onedrive\\documents\\teste 02\\webapi\\webapi\\infrastructure\\connectioncontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93F56D9D-D8E0-499C-8AA3-6A8517C61E2B}|Webapi\\Webapi.csproj|solutionrelative:webapi\\infrastructure\\connectioncontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93F56D9D-D8E0-499C-8AA3-6A8517C61E2B}|Webapi\\Webapi.csproj|c:\\users\\mallo\\onedrive\\documents\\teste 02\\webapi\\webapi\\webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{93F56D9D-D8E0-499C-8AA3-6A8517C61E2B}|Webapi\\Webapi.csproj|solutionrelative:webapi\\webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93F56D9D-D8E0-499C-8AA3-6A8517C61E2B}|Webapi\\Webapi.csproj|c:\\users\\mallo\\onedrive\\documents\\teste 02\\webapi\\webapi\\extensions\\migrationextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93F56D9D-D8E0-499C-8AA3-6A8517C61E2B}|Webapi\\Webapi.csproj|solutionrelative:webapi\\extensions\\migrationextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\Webapi\\Webapi\\Dockerfile",
+              "RelativeDocumentMoniker": "Webapi\\Dockerfile",
+              "ToolTip": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\Webapi\\Webapi\\Dockerfile",
+              "RelativeToolTip": "Webapi\\Dockerfile",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-03-26T19:29:54.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\Webapi\\Webapi\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "Webapi\\Controllers\\EmployeeController.cs",
+              "ToolTip": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\Webapi\\Webapi\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "Webapi\\Controllers\\EmployeeController.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAwB4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T19:03:54.569Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DomainToDTOMapping.cs",
+              "DocumentMoniker": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\Webapi\\Webapi\\Application\\Mapping\\DomainToDTOMapping.cs",
+              "RelativeDocumentMoniker": "Webapi\\Application\\Mapping\\DomainToDTOMapping.cs",
+              "ToolTip": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\Webapi\\Webapi\\Application\\Mapping\\DomainToDTOMapping.cs",
+              "RelativeToolTip": "Webapi\\Application\\Mapping\\DomainToDTOMapping.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T19:03:47.712Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EmployeeViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\Webapi\\Webapi\\Application\\ViewModel\\EmployeeViewModel.cs",
+              "RelativeDocumentMoniker": "Webapi\\Application\\ViewModel\\EmployeeViewModel.cs",
+              "ToolTip": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\Webapi\\Webapi\\Application\\ViewModel\\EmployeeViewModel.cs",
+              "RelativeToolTip": "Webapi\\Application\\ViewModel\\EmployeeViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T19:03:44.047Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Webapi.csproj",
+              "DocumentMoniker": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\Webapi\\Webapi\\Webapi.csproj",
+              "RelativeDocumentMoniker": "Webapi\\Webapi.csproj",
+              "ToolTip": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\Webapi\\Webapi\\Webapi.csproj",
+              "RelativeToolTip": "Webapi\\Webapi.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-03-26T14:46:20.191Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\Webapi\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\Webapi\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2024-03-26T14:28:20.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EmployeeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\Webapi\\Webapi\\Infrastructure\\Repositories\\EmployeeRepository.cs",
+              "RelativeDocumentMoniker": "Webapi\\Infrastructure\\Repositories\\EmployeeRepository.cs",
+              "ToolTip": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\Webapi\\Webapi\\Infrastructure\\Repositories\\EmployeeRepository.cs",
+              "RelativeToolTip": "Webapi\\Infrastructure\\Repositories\\EmployeeRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T13:49:16.063Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\Webapi\\Webapi\\Program.cs",
+              "RelativeDocumentMoniker": "Webapi\\Program.cs",
+              "ToolTip": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\Webapi\\Webapi\\Program.cs",
+              "RelativeToolTip": "Webapi\\Program.cs",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAAAF4AAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T13:14:59.495Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ConnectionContext.cs",
+              "DocumentMoniker": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\Webapi\\Webapi\\Infrastructure\\ConnectionContext.cs",
+              "RelativeDocumentMoniker": "Webapi\\Infrastructure\\ConnectionContext.cs",
+              "ToolTip": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\Webapi\\Webapi\\Infrastructure\\ConnectionContext.cs",
+              "RelativeToolTip": "Webapi\\Infrastructure\\ConnectionContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T13:11:41.119Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AttendanceRepository.cs",
+              "DocumentMoniker": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\Webapi\\Webapi\\Infrastructure\\Repositories\\AttendanceRepository.cs",
+              "RelativeDocumentMoniker": "Webapi\\Infrastructure\\Repositories\\AttendanceRepository.cs",
+              "ToolTip": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\Webapi\\Webapi\\Infrastructure\\Repositories\\AttendanceRepository.cs",
+              "RelativeToolTip": "Webapi\\Infrastructure\\Repositories\\AttendanceRepository.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAiwA4AAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T14:02:49.354Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MigrationExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\Webapi\\Webapi\\Extensions\\MigrationExtensions.cs",
+              "RelativeDocumentMoniker": "Webapi\\Extensions\\MigrationExtensions.cs",
+              "ToolTip": "C:\\Users\\mallo\\OneDrive\\Documents\\Teste 02\\Webapi\\Webapi\\Extensions\\MigrationExtensions.cs",
+              "RelativeToolTip": "Webapi\\Extensions\\MigrationExtensions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T13:11:31.348Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

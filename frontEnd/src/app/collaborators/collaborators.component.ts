@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { Router } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-collaborators',
@@ -30,7 +31,7 @@ export class CollaboratorsComponent {
   }
 
   async getCollaborators() {
-    const url = "http://localhost:5046/api/v1/employee"
+    const url = `${environment.urlApi}/api/v1/employee`
     const [status, response] = await this.rest.getData(url);
     if (status === 200) {
       this.collaborators = response;
@@ -40,7 +41,7 @@ export class CollaboratorsComponent {
   }
 
   async deleteCollaborator(id: number) {
-    const url = `http://localhost:5046/api/v1/employee/delete/${id}`
+    const url = `${environment.urlApi}/api/v1/employee/delete/${id}`
     const status = await this.rest.deleteData(url);
     if (status === 200) {
       console.log("apagado com sucesso")
@@ -60,7 +61,7 @@ export class CollaboratorsComponent {
 
   async preloadImages() {
     for (const collaborator of this.collaborators) {
-      const imageUrl = `http://localhost:5046/api/v1/employee/image/${collaborator.employeeId}`;
+      const imageUrl = `${environment.urlApi}/api/v1/employee/image/${collaborator.employeeId}`;
       try {
         const response = await fetch(imageUrl, {
           method: 'POST',

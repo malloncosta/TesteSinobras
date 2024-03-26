@@ -6,6 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { RestMethods } from '../../../providers/rest-methods';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-register-point',
@@ -31,7 +32,7 @@ export class RegisterPointComponent {
   }
 
   async getAttendances() {
-    const url = `http://localhost:5046/api/v1/employee`
+    const url = `${environment.urlApi}/api/v1/employee`
     const [status, response] = await this.rest.getData(url);
     if (status === 200) {
       this.collaborators = response;
@@ -46,7 +47,7 @@ export class RegisterPointComponent {
   }
 
   async registerEntry(collaborator: any){
-    const url = `http://localhost:5046/api/v1/attendance/entry/${collaborator.employeeId}`
+    const url = `${environment.urlApi}/api/v1/attendance/entry/${collaborator.employeeId}`
     const status = await this.rest.postData(url);
     if (status === 200) {
       this.openSnackBar("Entrada registrada", "Sucesso");
@@ -57,7 +58,7 @@ export class RegisterPointComponent {
   }
 
   async registerExit(collaborator: any){
-    const url = `http://localhost:5046/api/v1/attendance/exit/${collaborator.employeeId}`
+    const url = `${environment.urlApi}/api/v1/attendance/exit/${collaborator.employeeId}`
 
     if(!collaborator.hasEntryToday){
       this.openSnackBar("Registre a entrada primeiro", "Erro");
@@ -75,7 +76,7 @@ export class RegisterPointComponent {
 
   async preloadImages() {
     for (const collaborator of this.collaborators) {
-      const imageUrl = `http://localhost:5046/api/v1/employee/image/${collaborator.employeeId}`;
+      const imageUrl = `${environment.urlApi}/api/v1/employee/image/${collaborator.employeeId}`;
       try {
         const response = await fetch(imageUrl, {
           method: 'POST',
