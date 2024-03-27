@@ -24,7 +24,7 @@
         <mat-card-content>
             <div *ngFor="let collaborator of collaborators | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }; let i = index"
                 style="padding: 15px;">
-                <mat-card>
+                <mat-card ng-repeat="colaborador in collaborators | filter:criteria">
                     <mat-card-header>
                         <mat-card-title-group>
                             <img mat-card-sm-image [src]="imageSrcMap.get(collaborator.employeeId)">

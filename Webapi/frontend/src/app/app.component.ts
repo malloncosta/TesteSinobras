@@ -9,11 +9,22 @@ import {MatMenuModule} from '@angular/material/menu';
 import { MatListModule} from '@angular/material/list';
 import { Routes, RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatButtonModule, MatDividerModule, MatIconModule, MatSidenavModule, MatToolbarModule, MatMenuModule, MatListModule],
+  imports: [
+    RouterOutlet, 
+    MatButtonModule, 
+    MatDividerModule, 
+    MatIconModule, 
+    MatSidenavModule, 
+    MatToolbarModule, 
+    MatMenuModule, 
+    MatListModule,
+    HomeComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
