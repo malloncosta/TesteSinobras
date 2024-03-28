@@ -87,7 +87,7 @@ export class ReportComponent {
     if (status === 200) {
       this.collaborators = response;
       console.log(response)
-      this.calcularPorcentagensTrabalhadas();
+      this.calculatePercentagesWorked();
 
       this.chartOptions = {
         animationEnabled: true,
@@ -159,33 +159,33 @@ export class ReportComponent {
     return `${hours} horas, ${minutes} minutos e ${seconds} segundos`;
   }
 
-  calcularPorcentagemTrabalhada(attendance: any[]): number {
-    let totalHorasTrabalhadas = 0;
-    let totalRegistrosValidos = 0; 
+  calculatePercentageWorked(attendance: any[]): number {
+    let totalHoursWorked = 0;
+    let totalValidRecords = 0; 
     
     attendance.forEach(entry => {
       if (entry.entryTime && entry.exitTime) {
         const entryTime = new Date(entry.entryTime);
         const exitTime = new Date(entry.exitTime);
         const diff = exitTime.getTime() - entryTime.getTime();
-        totalHorasTrabalhadas += diff;
-        totalRegistrosValidos++;
+        totalHoursWorked += diff;
+        totalValidRecords++;
       }
     });
 
-    if (totalRegistrosValidos === 0) {
+    if (totalValidRecords === 0) {
       return 0;
     }
     
-    const totalHorasTrabalhadasEmHoras = totalHorasTrabalhadas / (1000 * 60 * 60);
-    return totalHorasTrabalhadasEmHoras;
+    const totalHoursWorkedInHours = totalHoursWorked / (1000 * 60 * 60);
+    return totalHoursWorkedInHours;
 }
 
 
-  calcularPorcentagensTrabalhadas(): void {
+calculatePercentagesWorked(): void {
     this.collaborators.forEach((employee: { attendance: any[]; name: any; }) => {
-      const porcentagemTrabalhada = this.calcularPorcentagemTrabalhada(employee.attendance);
-      this.data.push({ label: employee.name, y: porcentagemTrabalhada });
+      const percentageworked = this.calculatePercentageWorked(employee.attendance);
+      this.data.push({ label: employee.name, y: percentageworked });
     });
   }
 
