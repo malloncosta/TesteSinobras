@@ -1,0 +1,39 @@
+<mat-toolbar style="background: linear-gradient(135deg, #3498db, #9b59b6);" class="mat-elevation-z8">
+  <button (click)="drawer.toggle()" mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <a href="https://www.grupoacocearense.com.br/sinobras/" target="_blank">
+    <img src="../assets/sinobras_logo.png" alt="logo sinobras" style="width: 180px;">2
+  </a>
+  <span>Sistema de Ponto Eletrônico</span>
+  <span class="example-spacer"></span>
+</mat-toolbar>
+
+<mat-drawer-container autosize>
+  <mat-drawer #drawer opened="true" mode="side" position="start">
+    <mat-nav-list>
+      <mat-list-item (click)="goHome()">
+        <button mat-button ><mat-icon>home</mat-icon> Home</button>
+      </mat-list-item>
+      <mat-list-item (click)="goCollaborators()" >
+        <button mat-button><mat-icon>people</mat-icon> Colaboradores</button>
+      </mat-list-item>
+      <mat-list-item (click)="goRegisterPoint()">
+        <button mat-button><mat-icon>check</mat-icon> Registrar Ponto</button>
+      </mat-list-item>
+      <mat-list-item (click)="goReport()">
+        <button mat-button ><mat-icon>analytics</mat-icon> Relatório</button>
+      </mat-list-item>
+      <mat-list-item (click)="goAbout()">
+        <button mat-button ><mat-icon>info</mat-icon> Sobre</button>
+      </mat-list-item>
+
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div style="height: 100vh; width: 100%; text-align: center;">
+
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

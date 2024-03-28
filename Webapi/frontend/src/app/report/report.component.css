@@ -1,0 +1,23 @@
+.content {
+    margin-top: 30px;
+    padding-bottom: 20px;
+}
+
+.title {
+    font-size: 35px;
+}
+
+.card {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 80%;
+}
+
+.example-month-picker .mat-calendar-period-button {
+    pointer-events: none;
+}
+
+.example-month-picker .mat-calendar-arrow {
+    display: none;
+}

@@ -10,5 +10,7 @@ services:
       - "5000:5000"
       - "5001:5001"
     volumes:
-      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
-      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https
+      - Webapi/Storage:/home/app/Storage
+      - Webapi/App_Data/Storage:/home/app/App_Data/Storage

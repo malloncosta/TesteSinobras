@@ -12,7 +12,6 @@ namespace Webapi.Infrastructure.Repositories
         {
             _context.Attendances.Add(attendance);
             _context.SaveChanges();
-            _context.Database.Migrate();
         }
 
         public List<AttendanceDTO> Get()

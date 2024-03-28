@@ -1,0 +1,65 @@
+<main class="content">
+    <strong class="title">Relatório</strong>
+    <mat-card class="card">
+
+        <div style="display: flex; justify-content: space-between;">
+            <div style="text-align: left; margin-top: 10px; margin-left: 10px;">
+                <td>Escolha uma data</td>
+                <mat-form-field style="width: min-content; margin-top: 10px; margin-left: 10px;">
+                    <mat-label>Mês e Ano</mat-label>
+                    <input matInput [matDatepicker]="dp" [formControl]="date">
+                    <mat-hint>MM/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
+                    <mat-datepicker #dp startView="multi-year" (monthSelected)="setMonthAndYear($event, dp)"
+                        panelClass="example-month-picker">
+                    </mat-datepicker>
+                </mat-form-field>
+            </div>
+
+            <div *ngIf="collaborators" style="text-align: right; margin-right: 20px;">
+                <canvasjs-chart [options]="chartOptions" [styles]="{width: '400px', height:'200px'}"></canvasjs-chart>
+            </div>
+        </div>
+
+        <mat-card-content>
+            <div *ngFor="let collaborator of collaborators | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }; let i = index"
+                style="padding: 15px;">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title-group>
+                            <img mat-card-sm-image [src]="imageSrcMap.get(collaborator.employeeId)">
+                            <mat-card-title>{{collaborator.name}}</mat-card-title>
+                            <mat-card-subtitle> <strong>Cargo:</strong> {{collaborator.position}}</mat-card-subtitle>
+                            <mat-card-subtitle> <strong>Matrícula:</strong>
+                                {{collaborator.registration}}</mat-card-subtitle>
+                            <mat-card-subtitle> <strong>Salário:</strong> R${{collaborator.salary}}</mat-card-subtitle>
+                        </mat-card-title-group>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div *ngIf="collaborator.attendance && collaborator.attendance.length > 0">
+                            <ul style="list-style-type: none; padding: 0; margin: 0;">
+                                <li *ngFor="let entry of collaborator.attendance"
+                                    style="display: inline-block; margin-right: 20px;">
+                                    <div style="display: inline-block; margin-right: 10px; margin-top: 5px;">
+                                        <strong> {{ entry.date | date }}</strong> <br>
+                                        <strong>Entrada:</strong> {{ entry.entryTime | date: 'HH:mm:ss' }} <br>
+                                        <strong>Saída:</strong> {{ entry.exitTime | date: 'HH:mm:ss' }} <br>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div *ngIf="!collaborator.attendance || collaborator.attendance.length === 0">
+                            <p>Não há registros de presença para este colaborador.</p>
+                        </div>
+                    </mat-card-content>
+                    <div *ngIf="collaborator.attendance && collaborator.attendance.length > 0"
+                        style="text-align: left; margin-left: 10px; margin-top: 10px;">
+                        <p><strong>Horas trabalhadas:</strong> {{ calculateHoursWorked(collaborator) }} </p>
+                    </div>
+                </mat-card>
+            </div>
+            <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+        </mat-card-content>
+
+    </mat-card>
+</main>

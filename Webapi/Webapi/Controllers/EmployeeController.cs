@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.IO;
 using Webapi.Application.ViewModel;
 using Webapi.Domain.DTOs;
 using Webapi.Domain.Model;

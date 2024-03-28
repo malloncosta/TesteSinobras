@@ -1,0 +1,72 @@
+name: dockercompose4716485731408521452
+services:
+  postgres:
+    environment:
+      POSTGRES_PASSWORD: "123"
+    image: postgres
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 5432
+        published: "5432"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\mallo\OneDrive\Documents\Teste 02\Webapi\employee.sql
+        target: /docker-entrypoint-initdb.d/employee.sql
+        bind:
+          create_host_path: true
+  webapi:
+    build:
+      context: C:\Users\mallo\OneDrive\Documents\Teste 02\Webapi
+      dockerfile: Webapi/Dockerfile
+    depends_on:
+      postgres:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "5000"
+      ASPNETCORE_HTTPS_PORTS: "5001"
+    image: webapi
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 5000
+        published: "5000"
+        protocol: tcp
+      - mode: ingress
+        target: 5001
+        published: "5001"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\mallo\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\mallo\AppData\Roaming/ASP.NET/Https
+        target: /home/app/.aspnet/https
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\mallo\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/.microsoft/usersecrets
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\mallo\AppData\Roaming/ASP.NET/Https
+        target: /home/.aspnet/https
+        bind:
+          create_host_path: true
+      - type: bind
+        source: /App_Data
+        target: /home
+        bind:
+          create_host_path: true
+networks:
+  default:
+    name: dockercompose4716485731408521452_default

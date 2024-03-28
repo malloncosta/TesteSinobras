@@ -1,0 +1,42 @@
+<main class="content">
+  <strong class="title">Registrar Ponto</strong>
+  <mat-card class="card">
+    <p style="margin-top: 10px; text-align: left; margin-left: 10px; font-size: 16px;">{{currentDate | date}}</p>
+    <mat-card-content>
+      <div
+        *ngFor="let collaborator of collaborators | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }; let i = index"
+        style="padding: 15px;">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title-group>
+              <img mat-card-sm-image [src]="imageSrcMap.get(collaborator.employeeId)">
+              <mat-card-title>{{collaborator.name}}</mat-card-title>
+              <mat-card-subtitle> <strong>Cargo:</strong> {{collaborator.position}}</mat-card-subtitle>
+              <mat-card-subtitle> <strong>Matrícula:</strong> {{collaborator.registration}}</mat-card-subtitle>
+              <mat-card-subtitle> <strong>Salário:</strong> {{collaborator.salary}}</mat-card-subtitle>
+            </mat-card-title-group>
+          </mat-card-header>
+          <mat-card-content>
+          </mat-card-content>
+          <mat-card-actions>
+            <button style="margin-right: 5px;" mat-button
+              [ngClass]="{ 'registered': !collaborators.hasEntryToday, 'not-registered': collaborator.hasEntryToday }"
+              [disabled]="collaborator.hasEntryToday"
+              (click)="registerEntry(collaborator)"><mat-icon>done</mat-icon>
+              <td>Registrar entrada</td>
+            </button>
+
+            <button mat-button
+              [ngClass]="{ 'registered': !collaborator.hasExitToday, 'not-registered': collaborator.hasExitToday }"
+              [disabled]="collaborator.hasExitToday"
+              (click)="registerExit(collaborator)"><mat-icon>done</mat-icon>
+              <td>Registrar saída</td>
+            </button>
+
+          </mat-card-actions>
+        </mat-card>
+      </div>
+      <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+    </mat-card-content>
+  </mat-card>
+</main>

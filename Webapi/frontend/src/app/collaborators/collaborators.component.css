@@ -1,0 +1,29 @@
+.content {
+  margin-top: 30px;
+  padding-bottom: 20px;
+}
+
+.title {
+  font-size: 35px;
+}
+
+.card {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  width: 80%;
+}
+
+.example-flex-container {
+  float: right;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}

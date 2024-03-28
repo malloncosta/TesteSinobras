@@ -3,6 +3,7 @@
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 USER app
 WORKDIR /app
+COPY --chown=app:app . .
 RUN chmod -R 755 /app
 EXPOSE 5000
 EXPOSE 5001
@@ -24,4 +25,5 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 VOLUME ["/app/Storage"]
+VOLUME ["/app/App_Data/Storage"]
 ENTRYPOINT ["dotnet", "Webapi.dll"]

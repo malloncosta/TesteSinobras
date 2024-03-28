@@ -1,0 +1,35 @@
+<main class="content">
+    <strong class="title">Colaboradores</strong>
+    <mat-card class="card">
+        <mat-card-content>
+            <div *ngFor="let collaborator of collaborators | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }; let i = index" style="padding: 15px;">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title-group>
+                          <img mat-card-sm-image [src]="imageSrcMap.get(collaborator.employeeId)">
+                          <mat-card-title>{{collaborator.name}}</mat-card-title>
+                          <mat-card-subtitle> <strong>Cargo:</strong> {{collaborator.position}}</mat-card-subtitle>
+                          <mat-card-subtitle> <strong>Matrícula:</strong> {{collaborator.registration}}</mat-card-subtitle>
+                          <mat-card-subtitle> <strong>Salário:</strong> {{collaborator.salary}}</mat-card-subtitle>
+                        </mat-card-title-group>
+                      </mat-card-header>
+                      <mat-card-content>
+                      </mat-card-content>
+                      <mat-card-actions>
+                        <button mat-button (click)="deleteCollaborator(collaborator.employeeId)"><mat-icon>delete</mat-icon></button>
+                        <button mat-button (click)="goUpdate(collaborator)" ><mat-icon>update</mat-icon></button>
+                      </mat-card-actions>
+                </mat-card>
+            </div>
+            <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+        </mat-card-content>
+    </mat-card>
+
+    <div class="example-flex-container">
+        <div class="example-button-container">
+          <button mat-fab color="primary" (click)="goRegister()" aria-label="Example icon button with a delete icon">
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+      </div>
+</main>
