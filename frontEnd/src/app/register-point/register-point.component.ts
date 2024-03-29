@@ -4,6 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { RestMethods } from '../../../providers/rest-methods';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-register-point',
@@ -18,6 +19,7 @@ export class RegisterPointComponent {
 
   constructor(
     private rest: RestMethods,
+    private _snackBar: MatSnackBar
   ) {
     this.getAttendances();
   }
@@ -38,7 +40,9 @@ export class RegisterPointComponent {
     const url = `http://localhost:5046/api/v1/attendance/entry/${employeeId}`
     const status = await this.rest.postData(url);
     if (status === 200) {
-      console.log("registrado a entrada")
+      this.openSnackBar("Entrada registrada", "Sucesso");
+    } else {
+      this.openSnackBar("Entrada não registrada", "Erro");
     }
   }
 
@@ -46,7 +50,15 @@ export class RegisterPointComponent {
     const url = `http://localhost:5046/api/v1/attendance/exit/${employeeId}`
     const status = await this.rest.postData(url);
     if (status === 200) {
-      console.log("registrado a saida")
+      this.openSnackBar("Saída registrada", "Sucesso");
+    } else {
+      this.openSnackBar("Saída não registrada", "Erro");
     }
+  }
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 2000,
+    });
   }
 }

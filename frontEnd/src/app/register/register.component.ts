@@ -5,6 +5,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ActivatedRoute, Router } from '@angular/router';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 import {
   FormBuilder,
@@ -46,7 +47,8 @@ export class RegisterComponent {
   constructor(
     public formBuilder: FormBuilder,
     private activatedRoute: ActivatedRoute,
-
+    private _snackBar: MatSnackBar,
+    private router: Router,
   ) {
     this.formRegister = this.formBuilder.group({
       full_name: ['', [Validators.required, Validators.minLength(2)]],
@@ -110,18 +112,31 @@ export class RegisterComponent {
 
           response = await fetch(`http://localhost:5046/api/v1/employee/update/${this.urlParams.idEmployee}`, requestOptions);
 
+          this.openSnackBar("Cadastro atualizado!", "Sucesso")
         } else {
           requestOptions.method = 'POST'
 
           response = await fetch('http://localhost:5046/api/v1/employee', requestOptions);
 
+          this.openSnackBar("Cadastro bem sucedido!", "Sucesso")
         }
-
-        console.log('Resposta:', response.status);
+        
       } catch (error) {
         console.error('Erro ao enviar requisição:', error);
+        this.openSnackBar("Cadastro mal sucedido!", "Erro");
       }
 
+      this.router.navigate(['/collaborators'])
+  }
+
+  cancelRegister(){
+    this.router.navigate(['/collaborators'])
+  }
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 2000,
+    });
   }
 
 

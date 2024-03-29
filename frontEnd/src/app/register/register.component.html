@@ -71,7 +71,7 @@
             <input type="file" (change)="onFileSelected($event)">
 
             <div style="display: flex; justify-content:space-around;">
-                <button mat-raised-button color="accent">Cancelar</button>
+                <button mat-raised-button color="accent" type="button" (click)="cancelRegister()">Cancelar</button>
                 <button mat-raised-button color="primary" type="submit">Salvar</button>
             </div>
         </form>
