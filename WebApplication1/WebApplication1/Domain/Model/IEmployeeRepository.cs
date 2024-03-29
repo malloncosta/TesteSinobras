@@ -6,7 +6,7 @@ namespace WebApplication1.Domain.Model
     {
         void Add(Employee employee);
 
-        List<EmployeeDTO> Get(int pageNumber, int pageQuantity);
+        List<EmployeeDTO> Get();
 
         Employee? Get(int id);
 

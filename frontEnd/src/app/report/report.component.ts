@@ -11,6 +11,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { RestMethods } from '../../../providers/rest-methods';
 import { CommonModule } from '@angular/common';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 const moment = _rollupMoment || _moment;
 
@@ -38,6 +40,7 @@ export const MY_FORMATS = {
     MatDatepickerModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxPaginationModule,
     CommonModule,
   ],
   providers: [
@@ -50,6 +53,9 @@ export const MY_FORMATS = {
 export class ReportComponent {
   date = new FormControl(moment());
   collaborators: any;
+
+  public currentPage = 1; 
+  public itemsPerPage = 5;
 
   constructor(
     private rest: RestMethods,

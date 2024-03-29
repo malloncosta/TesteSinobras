@@ -5,36 +5,21 @@ import { CommonModule } from '@angular/common';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { Router } from '@angular/router';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
   selector: 'app-collaborators',
   standalone: true,
-  imports: [MatCardModule, CommonModule, MatIconModule, MatButtonModule],
+  imports: [MatCardModule, CommonModule, MatIconModule, MatButtonModule, NgxPaginationModule],
   templateUrl: './collaborators.component.html',
   styleUrl: './collaborators.component.css'
 })
 export class CollaboratorsComponent {
-  /* collaborators = [
-    {
-      "id": 3,
-      "nameEmployee": "Silva",
-      "registration": 23444,
-      "position": "empregado",
-      "salary": 3242,
-      "photo": "Storage\\pico-da-montanha-nevada-sob-a-majestade-generativa-da-galaxia-estrelada-ai.jpg"
-    },
-    {
-      "id": 4,
-      "nameEmployee": "João",
-      "registration": 21315,
-      "position": "piloto",
-      "salary": 5200,
-      "photo": "Storage\\beleza-abstrata-de-outono-em-padrao-multicolorido-de-veios-de-folhas-gerado-por-ia.jpg"
-    }
-  ] */
-
   collaborators: any;
   imageSrc: string = '';
+  
+  public currentPage = 1; 
+  public itemsPerPage = 5;
 
   constructor(
     private rest: RestMethods,
@@ -45,7 +30,7 @@ export class CollaboratorsComponent {
   }
 
   async getCollaborators() {
-    const url = "http://localhost:5046/api/v1/employee?pageNumber=0&pageQuantity=23"
+    const url = "http://localhost:5046/api/v1/employee"
     const [status, response] = await this.rest.getData(url);
     if(status === 200){
       this.collaborators = response;

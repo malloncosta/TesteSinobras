@@ -121,7 +121,7 @@ namespace WebApplication1.Controllers
 
         [HttpGet]
         [Route("year/{year}/month/{month}")]
-        public IActionResult GetAttendancesByMonth(int year, int month, int pageNumber, int pageQuantity)
+        public IActionResult GetAttendancesByMonth(int year, int month)
         {
 
             if (month < 1 || month > 12)
@@ -129,7 +129,7 @@ namespace WebApplication1.Controllers
                 return BadRequest("Invalid month");
             }
 
-            var employeesWithAttendance = _employeeRepository.Get(pageNumber, pageQuantity)
+            var employeesWithAttendance = _employeeRepository.Get()
                 .Select(employee => new {
                 EmployeeId = employee.Id,
                 Name = employee.NameEmployee,
@@ -140,8 +140,6 @@ namespace WebApplication1.Controllers
                 Photo = employee.Photo,
                 Attendance = _attendanceRepository.GetByYearMonth(year, month, employee.Id)
                 })
-                .Skip((pageNumber - 1) * pageQuantity)
-                .Take(pageQuantity)
                 .ToList();
 
             return Ok(employeesWithAttendance);

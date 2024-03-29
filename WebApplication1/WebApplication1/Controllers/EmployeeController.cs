@@ -61,9 +61,9 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get(int pageNumber, int pageQuantity)
+        public IActionResult Get()
         {
-            var employeesWithAttendance = _employeeRepository.Get(pageNumber, pageQuantity)
+            var employeesWithAttendance = _employeeRepository.Get()
                 .Select(employee => new {
                     EmployeeId = employee.Id,
                     Name = employee.NameEmployee,
@@ -72,10 +72,10 @@ namespace WebApplication1.Controllers
                     Salary = employee.Salary,
                     Registration = employee.Registration,
                     Photo = employee.Photo,
-                    Attendance = _attendanceRepository.GetbyEmployeeId(employee.Id) 
-                })
-                .Skip((pageNumber - 1) * pageQuantity)
-                .Take(pageQuantity) 
+                    Attendance = _attendanceRepository.GetbyEmployeeId(employee.Id),
+                    HasEntryToday = _attendanceRepository.HasEntryToday(employee.Id),
+                    HasExitToday = _attendanceRepository.HasExitToday(employee.Id)
+                }) 
                 .ToList();
 
             return Ok(employeesWithAttendance);

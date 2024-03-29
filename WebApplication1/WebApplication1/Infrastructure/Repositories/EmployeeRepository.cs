@@ -13,10 +13,9 @@ namespace WebApplication1.Infrastructure.Repositories
             _context.SaveChanges();
         }
 
-        public List<EmployeeDTO> Get(int pageNumber, int pageQuantity)
+        public List<EmployeeDTO> Get()
         {
-            return _context.Employees.Skip(pageNumber * pageQuantity)
-                .Take(pageQuantity)
+            return _context.Employees
                 .Select(b =>
                     new EmployeeDTO()
                     {

@@ -17,5 +17,9 @@ namespace WebApplication1.Domain.Model
 
         List<AttendanceDTO> GetByYearMonth(int year, int month, int employeeId);
 
+        bool HasEntryToday(int employeeId);
+
+        bool HasExitToday(int employeeId);
+
     }
 }

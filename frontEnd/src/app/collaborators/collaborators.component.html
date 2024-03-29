@@ -2,7 +2,7 @@
     <strong class="title">Colaboradores</strong>
     <mat-card class="card">
         <mat-card-content>
-            <div *ngFor="let collaborator of collaborators" style="padding: 15px;">
+            <div *ngFor="let collaborator of collaborators | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }; let i = index" style="padding: 15px;">
                 <mat-card>
                     <mat-card-header>
                         <mat-card-title-group>
@@ -21,6 +21,7 @@
                       </mat-card-actions>
                 </mat-card>
             </div>
+            <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
         </mat-card-content>
     </mat-card>
 

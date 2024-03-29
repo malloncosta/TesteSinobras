@@ -31,3 +31,8 @@
     background-color: gray; /* ou qualquer outra cor desejada */
     color: white; /* ou outra cor de texto que contraste com o fundo */
 }
+
+.not-registered {
+  background-color: green; /* ou qualquer outra cor desejada para não registrado */
+  color: black; /* ou outra cor de texto que contraste com o fundo */
+}
