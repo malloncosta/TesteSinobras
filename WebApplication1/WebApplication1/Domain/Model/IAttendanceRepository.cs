@@ -9,7 +9,7 @@ namespace WebApplication1.Domain.Model
 
         List<AttendanceDTO> Get();
 
-        Attendance? GetbyEmployeeId(int employeeId);
+        List<Attendance>? GetbyEmployeeId(int employeeId);
 
         Attendance? GetByDate(int employeeId, DateTime date);
 

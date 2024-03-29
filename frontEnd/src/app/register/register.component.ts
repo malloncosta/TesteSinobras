@@ -62,10 +62,11 @@ export class RegisterComponent {
 
     this.collaboratorData = localStorage.getItem('collaborator');
 
-    if(this.urlParams.update && this.collaboratorData){
+    if(this.urlParams.update === "true" && this.collaboratorData){
+      console.log('entrou na função')
       const collaborator = JSON.parse(this.collaboratorData);
       this.formRegister = this.formBuilder.group({
-        full_name: [collaborator.nameEmployee, [Validators.required, Validators.minLength(2)]],
+        full_name: [collaborator.name, [Validators.required, Validators.minLength(2)]],
         position: [collaborator.position, [Validators.required]],
         age: [collaborator.age, [Validators.required]],
         salary: [collaborator.salary, [Validators.required]],
@@ -73,17 +74,6 @@ export class RegisterComponent {
         photo: [collaborator.photo, [Validators.required]]
       })
     }
-
-    /* if(data.update){
-      this.formRegister = this.formBuilder.group({
-        full_name: [data., [Validators.required, Validators.minLength(2)]],
-        position: ['', [Validators.required]],
-        age: ['', [Validators.required]],
-        salary: ['', [Validators.required]],
-        register: ['', [Validators.required]],
-        photo: ['', [Validators.required]]
-      })
-    } */
   }
 
   async submitForm() {
@@ -115,7 +105,7 @@ export class RegisterComponent {
 
         let response;
 
-        if(this.urlParams && this.collaboratorData){
+        if(this.urlParams.update === "true" && this.collaboratorData){
           requestOptions.method = 'PUT'
 
           response = await fetch(`http://localhost:5046/api/v1/employee/update/${this.urlParams.idEmployee}`, requestOptions);

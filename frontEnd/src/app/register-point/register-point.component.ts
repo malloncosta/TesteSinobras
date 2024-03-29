@@ -31,7 +31,22 @@ export class RegisterPointComponent {
       this.attendances = this.collaborators
         .filter((attendance: { attendance: any; }) => attendance.attendance)
         .map((attendance: { attendance: any; }) => attendance.attendance);
+    }
+  }
 
+  async registerEntry(employeeId: number){
+    const url = `http://localhost:5046/api/v1/attendance/entry/${employeeId}`
+    const status = await this.rest.postData(url);
+    if (status === 200) {
+      console.log("registrado a entrada")
+    }
+  }
+
+  async registerExit(employeeId: number){
+    const url = `http://localhost:5046/api/v1/attendance/exit/${employeeId}`
+    const status = await this.rest.postData(url);
+    if (status === 200) {
+      console.log("registrado a saida")
     }
   }
 }

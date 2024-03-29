@@ -24,8 +24,9 @@ export class RestMethods {
       });
 
       const status = await response.status;
-      const result = await response.json();
-      return [status, result];
+      //const result = await response.json();
+      //return [status, result];
+      return status;
     } catch (error) {
       console.error('Error al realizar la solicitud:', error);
       throw error; // Puedes manejar el error según tus necesidades

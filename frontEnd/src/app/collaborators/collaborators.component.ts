@@ -61,7 +61,7 @@ export class CollaboratorsComponent {
 
   goRegister(){
     const queryParams = {
-      update: true,
+      update: false,
     };
 
     this.router.navigate(['/register'], {
@@ -72,7 +72,7 @@ export class CollaboratorsComponent {
   goUpdate(collaborator: any){
     const queryParams = {
       update: true,
-      idEmployee: collaborator.id,
+      idEmployee: collaborator.employeeId,
     };
 
     localStorage.setItem('collaborator', JSON.stringify(collaborator));

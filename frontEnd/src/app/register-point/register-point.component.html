@@ -16,8 +16,8 @@
                       <mat-card-content>
                       </mat-card-content>
                       <mat-card-actions>
-                        <button mat-button><mat-icon>done</mat-icon><td>Registrar entrada</td></button>
-                        <button mat-button><mat-icon>done</mat-icon><td>Registrar saída</td></button>
+                        <button mat-button (click)="registerEntry(collaborator.employeeId)"><mat-icon>done</mat-icon><td>Registrar entrada</td></button>
+                        <button mat-button (click)="registerExit(collaborator.employeeId)"><mat-icon>done</mat-icon><td>Registrar saída</td></button>
                       </mat-card-actions>
                 </mat-card>
             </div>

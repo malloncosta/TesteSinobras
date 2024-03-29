@@ -29,10 +29,11 @@ namespace WebApplication1.Infrastructure.Repositories
         }
 
 
-        public Attendance? GetbyEmployeeId(int employeeId)
+        public List<Attendance> GetbyEmployeeId(int employeeId)
         {
-            return _context.Attendances.FirstOrDefault(a => a.employeeId == employeeId);
+            return _context.Attendances.Where(a => a.employeeId == employeeId).ToList();
         }
+
 
         public Attendance? GetByDate(int employeeId, DateTime date)
         {

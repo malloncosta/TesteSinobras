@@ -21,7 +21,7 @@ namespace WebApplication1.Controllers
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
         [HttpPost]
-        [Route("{employeeId}/entry")]
+        [Route("entry/{employeeId}")]
         public IActionResult RegisterAttendance(int employeeId)
         {
             var employee = _employeeRepository.Get(employeeId);
@@ -40,10 +40,10 @@ namespace WebApplication1.Controllers
             var startWorkingHours = new DateTime(now.Year, now.Month, now.Day, 8, 0, 0);
             var endWorkingHours = new DateTime(now.Year, now.Month, now.Day, 18, 0, 0);
 
-            if (now < startWorkingHours || now > endWorkingHours)
-            {
-                return BadRequest("Cannot register attendance outside of working hours (08:00 to 18:00).");
-            }
+            //if (now < startWorkingHours || now > endWorkingHours)
+            //{
+            //    return BadRequest("Cannot register attendance outside of working hours (08:00 to 18:00).");
+            //}
 
             var todayAttendance = _attendanceRepository.GetByDate(employeeId, now.Date);
             if (todayAttendance != null)
@@ -60,7 +60,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
-        [Route("{employeeId}/exit")]
+        [Route("exit/{employeeId}")]
         public IActionResult RegisterExit(int employeeId)
         {
             var employee = _employeeRepository.Get(employeeId);
@@ -71,13 +71,13 @@ namespace WebApplication1.Controllers
 
             var now = DateTime.UtcNow;
 
-            var startWorkingHours = new DateTime(now.Year, now.Month, now.Day, 8, 0, 0);
-            var endWorkingHours = new DateTime(now.Year, now.Month, now.Day, 18, 0, 0);
+            //var startWorkingHours = new DateTime(now.Year, now.Month, now.Day, 8, 0, 0);
+            //var endWorkingHours = new DateTime(now.Year, now.Month, now.Day, 18, 0, 0);
 
-            if (now < startWorkingHours || now > endWorkingHours)
-            {
-                return BadRequest("Cannot register attendance outside of working hours (08:00 to 18:00).");
-            }
+            //if (now < startWorkingHours || now > endWorkingHours)
+            //{
+            //    return BadRequest("Cannot register attendance outside of working hours (08:00 to 18:00).");
+            //}
 
             var todayAttendance = _attendanceRepository.GetByDate(employeeId, now.Date);
             if (todayAttendance == null || todayAttendance.exitTime != null)
