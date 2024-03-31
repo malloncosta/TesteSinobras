@@ -120,7 +120,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet]
-        [Route("year{year}/month/{month}")]
+        [Route("year/{year}/month/{month}")]
         public IActionResult GetAttendancesByMonth(int year, int month, int pageNumber, int pageQuantity)
         {
 
@@ -138,7 +138,7 @@ namespace WebApplication1.Controllers
                 Salary = employee.Salary,
                 Registration = employee.Registration,
                 Photo = employee.Photo,
-                Attendance = _attendanceRepository.GetByYearMonth(year, month)
+                Attendance = _attendanceRepository.GetByYearMonth(year, month, employee.Id)
                 })
                 .Skip((pageNumber - 1) * pageQuantity)
                 .Take(pageQuantity)
